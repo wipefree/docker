@@ -18,7 +18,7 @@ RUN apt list | grep "^maven"  >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
 
 # Устанавливаем Git
-RUN apt install git
+RUN apt install -y git
 RUN git --version >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
 
