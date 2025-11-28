@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 LABEL authors="Andre"
-
 #ENTRYPOINT ["top", "-b"]
+
+COPY header /tmp
+COPY footer /tmp
 
 RUN apt update
 
@@ -14,4 +16,9 @@ RUN echo '--------------------------' >> /tmp/result
 RUN apt install -y maven
 RUN apt list | grep "^maven"  >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
+
+# Скачиваем проект и компилим WAR
+RUN cd ..
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd boxfuse-sample-java-war-hello
+RUN mvn package
 
