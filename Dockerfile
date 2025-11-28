@@ -26,7 +26,6 @@ RUN echo '--------------------------' >> /tmp/result
 RUN cd ..
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN cd ./boxfuse-sample-java-war-hello
-RUN ll
 RUN mvn package
 # почему-то не видит pom.xml ???
 # руками скомпилировалось без вопросов...
