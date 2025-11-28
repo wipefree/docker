@@ -9,3 +9,9 @@ RUN apt update
 RUN apt install -y default-jdk
 RUN apt list | grep default-jdk >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
+
+# Устанавливаем Maven
+RUN apt install -y maven
+RUN apt list | grep "^maven"  >> /tmp/result
+RUN echo '--------------------------' >> /tmp/result
+
