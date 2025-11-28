@@ -25,6 +25,10 @@ RUN echo '--------------------------' >> /tmp/result
 # Скачиваем проект и компилим WAR
 RUN cd ..
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello
+RUN cd ./boxfuse-sample-java-war-hello
+RUN ll
 RUN mvn package
+# почему-то не видит pom.xml ???
+# руками скомпилировалось без вопросов...
+# Building war: /boxfuse-sample-java-war-hello/target/hello-1.0.war
 
