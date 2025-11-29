@@ -30,16 +30,16 @@ RUN apt-get install -y openjdk-11-jdk wget && \
 RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
 RUN tar -xzf apache-tomcat-9.0.34.tar.gz -C /opt/
 RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
-#COPY --from=0 /opt/tomcat /opt/tomcat
+
 EXPOSE 8080
 
 # Путь к дериктории /opt/tomcat/webapps/
+# или
 WORKDIR /boxfuse-sample-java-war-hello/target/
-CMD cp * /tmp
-#CMD cp hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
+CMD cp ./hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
 
 #CMD ["/opt/tomcat/bin/startup.sh"]
 #CMD ["/opt/tomcat/bin/startup.sh", "run"]
-#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************************************************************
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
