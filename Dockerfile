@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+#FROM ubuntu:20.04
+FROM tomcat:9.0-jdk11
 LABEL authors="Andre"
 #ENTRYPOINT ["top", "-b"]
 
@@ -28,18 +29,8 @@ RUN git --version >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
 
 # Скачиваем проект и компилим WAR
-#RUN cd ..
-#RUN mkdir maven
-#RUN cd maven
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /boxfuse-sample-java-war-hello
-# RUN cd ./boxfuse-sample-java-war-hello
 RUN mvn package
-# почему-то не видит pom.xml ???
-# руками скомпилировалось без вопросов...
 # Building war: /boxfuse-sample-java-war-hello/target/hello-1.0.war
-
-#ENTRYPOINT ["cd", "/maven/boxfuse-sample-java-war-hello"]
-#ENTRYPOINT ["ls", " >> /tmp/result"]
-#ENTRYPOINT ["mvn","package"]
 
