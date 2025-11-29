@@ -6,6 +6,7 @@ COPY header /tmp
 COPY footer /tmp
 
 RUN apt update
+RUN apt install -y net-tools
 
 # Устанавливаем Java JDK
 RUN apt install -y default-jdk
@@ -37,10 +38,12 @@ RUN tar -xzf apache-tomcat-9.0.34.tar.gz -C /opt/
 RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
 #COPY --from=0 /opt/tomcat /opt/tomcat
 EXPOSE 8080
-CMD ["/opt/tomcat/bin/startup.sh", "run"]
 
+# Путь к дериктории /opt/tomcat/webapps/
+CMD ["cp","/boxfuse-sample-java-war-hello/target/hello-1.0.war","/opt/tomcat/webapps/"]
+
+CMD ["/opt/tomcat/bin/startup.sh"]
+#CMD ["/opt/tomcat/bin/startup.sh", "run"]
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************************************************************
 CMD ["/bin/bash"]
-
-
