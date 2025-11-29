@@ -40,7 +40,7 @@ RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
 EXPOSE 8080
 
 # Путь к дериктории /opt/tomcat/webapps/
-CMD cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/tomcat/webapps/
+CMD cp ./target/hello-1.0.war /opt/tomcat/webapps/
 
 #CMD ["/opt/tomcat/bin/startup.sh"]
 #CMD ["/opt/tomcat/bin/startup.sh", "run"]
