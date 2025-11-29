@@ -41,7 +41,7 @@ EXPOSE 8080
 
 # Путь к дериктории /opt/tomcat/webapps/
 WORKDIR /boxfuse-sample-java-war-hello/target/
-CMD ls >> /tmp/result
+CMD cp hello-1.0.war /tmp
 #CMD cp hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
 
 #CMD ["/opt/tomcat/bin/startup.sh"]
