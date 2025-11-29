@@ -1,7 +1,6 @@
-#FROM ubuntu:20.04
-FROM tomcat:9.0-jdk11
+FROM ubuntu:20.04
+#FROM tomcat:9.0-jdk11
 LABEL authors="Andre"
-#ENTRYPOINT ["top", "-b"]
 
 COPY header /tmp
 COPY footer /tmp
