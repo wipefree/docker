@@ -38,4 +38,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 
 ENTRYPOINT ["cd", "./boxfuse-sample-java-war-hello"]
 ENTRYPOINT ["pwd", " >> /tmp/result"]
-ENTRYPOINT ["mvn","package"]
+#ENTRYPOINT ["mvn","package"]
