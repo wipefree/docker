@@ -32,11 +32,9 @@ EXPOSE 8080
 # или               /opt/apache-tomcat-9.0.34/webapps/
 #WORKDIR /boxfuse-sample-java-war-hello/target/
 #CMD cp ./hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
-#CMD cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
+CMD cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
 
 #CMD ["/opt/tomcat/bin/startup.sh", "run"]
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************************************************************
-
-CMD cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
 #CMD ["/bin/bash"]
