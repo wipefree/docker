@@ -17,11 +17,6 @@ RUN apt install -y maven
 RUN apt list | grep "^maven"  >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
 
-# Устанавливаем Tomcat
-#RUN apt install -y tomcat9
-#RUN apt list | grep "^tomcat" >> /tmp/result
-#RUN echo '--------------------------' >> /tmp/result
-
 # Устанавливаем Git
 RUN apt install -y git
 RUN git --version >> /tmp/result
@@ -32,4 +27,16 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /boxfuse-sample-java-war-hello
 RUN mvn package
 # Building war: /boxfuse-sample-java-war-hello/target/hello-1.0.war
+
+#**************************************************************************
+RUN apt-get install -y openjdk-11-jdk wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+RUN tar -xzf apache-tomcat-9.0.34.tar.gz -C /opt/
+RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
+COPY --from=0 /opt/tomcat /opt/tomcat
+EXPOSE 8080
+CMD ["/opt/tomcat/bin/startup.sh", "run"]
+#**************************************************************************
 
