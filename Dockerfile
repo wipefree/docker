@@ -37,7 +37,10 @@ RUN tar -xzf apache-tomcat-9.0.34.tar.gz -C /opt/
 RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
 #COPY --from=0 /opt/tomcat /opt/tomcat
 EXPOSE 8080
-#CMD ["/opt/tomcat/bin/startup.sh", "run"]
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/startup.sh", "run"]
+
+#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************************************************************
+CMD ["/bin/bash"]
+
 
