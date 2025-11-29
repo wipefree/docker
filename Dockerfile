@@ -18,9 +18,9 @@ RUN apt list | grep "^maven"  >> /tmp/result
 RUN echo '--------------------------' >> /tmp/result
 
 # Устанавливаем Tomcat
-RUN apt install -y tomcat9
-RUN apt list | grep "^tomcat" >> /tmp/result
-RUN echo '--------------------------' >> /tmp/result
+#RUN apt install -y tomcat9
+#RUN apt list | grep "^tomcat" >> /tmp/result
+#RUN echo '--------------------------' >> /tmp/result
 
 # Устанавливаем Git
 RUN apt install -y git
