@@ -32,7 +32,7 @@ RUN mvn package
 RUN apt-get install -y openjdk-11-jdk wget && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
 RUN tar -xzf apache-tomcat-9.0.34.tar.gz -C /opt/
 RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
 COPY --from=0 /opt/tomcat /opt/tomcat
