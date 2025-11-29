@@ -37,5 +37,5 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 # Building war: /boxfuse-sample-java-war-hello/target/hello-1.0.war
 
 ENTRYPOINT ["cd", "./boxfuse-sample-java-war-hello"]
-ENTRYPOINT ["echo", "pwd"]
+ENTRYPOINT ["pwd", " >> /tmp/result"]
 ENTRYPOINT ["mvn","package"]
