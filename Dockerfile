@@ -41,5 +41,6 @@ EXPOSE 8080
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************
 
-CMD ["/tmp/copywar.sh"]
+#CMD ["/tmp/copywar.sh"]
+CMD /tmp/copywar.sh
 CMD ["/bin/bash"]
