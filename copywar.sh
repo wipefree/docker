@@ -23,7 +23,7 @@ log "Проверяем существование /boxfuse-sample-java-war-hell
 if [ -d "/boxfuse-sample-java-war-hello/target" ]; then
     log "Директория /boxfuse-sample-java-war-hello/target/ существует"
     log "Содержимое /boxfuse-sample-java-war-hello/target/:"
-    ls -la /source/ >> $LOG_FILE 2>&1
+    ls -la /boxfuse-sample-java-war-hello/target/ >> $LOG_FILE 2>&1
 else
     log "ОШИБКА: Директория /boxfuse-sample-java-war-hello/target/ не существует!"
 fi
