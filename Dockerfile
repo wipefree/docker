@@ -39,7 +39,6 @@ EXPOSE 8080
 # CMD /tmp/copywar.sh
 #CMD ["sh", "-c", "/tmp/copywar.sh"]
 
-
 # Путь к дериктории /opt/tomcat/webapps/
 # или               /opt/apache-tomcat-9.0.34/webapps/
 WORKDIR /boxfuse-sample-java-war-hello/target/
