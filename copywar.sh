@@ -6,6 +6,7 @@
 # Создаем лог-файл
 LOG_FILE="/tmp/copywar-debug.log"
 
+
 # Функция для логирования
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> $LOG_FILE
