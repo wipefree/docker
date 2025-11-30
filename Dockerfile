@@ -29,7 +29,7 @@ RUN ln -s /opt/apache-tomcat-9.0.34 /opt/tomcat
 EXPOSE 8080
 
 #CMD ["/opt/tomcat/bin/startup.sh", "run"]
-#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 #**************************
 
 # Путь к дериктории /opt/tomcat/webapps/
