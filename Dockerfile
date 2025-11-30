@@ -42,4 +42,4 @@ EXPOSE 8080
 #**************************
 
 ENTRYPOINT ["/tmp/copywar.sh"]
-#CMD ["/bin/bash"]
+CMD ["/bin/bash"]
