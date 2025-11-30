@@ -37,4 +37,4 @@ CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 WORKDIR /boxfuse-sample-java-war-hello/target/
 RUN cp ./hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
 
-CMD ["/bin/bash"]
+# CMD ["/bin/bash"]
