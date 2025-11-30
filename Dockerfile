@@ -44,21 +44,24 @@ EXPOSE 8080
 WORKDIR /boxfuse-sample-java-war-hello/target/
 RUN pwd
 
-RUN if [ -d "/boxfuse-sample-java-war-hello/target" ]; then \
+RUN # Проверка исходной директории \
+    if [ -d "/boxfuse-sample-java-war-hello/target" ]; then \
         echo "Директория /boxfuse-sample-java-war-hello/target/ существует" \
-        ls -la /boxfuse-sample-java-war-hello/target/ >> $LOG_FILE 2>&1 \
+        ls -la /boxfuse-sample-java-war-hello/target/ >> /tmp/log.log \
     else  \
         echo "ОШИБКА: Директория /boxfuse-sample-java-war-hello/target/ не существует!" \
-    fi \
-    # Проверка целевой директории \
+    fi
+
+RUN # Проверка целевой директории \
     echo "Проверяем существование /opt/apache-tomcat-9.0.34/webapps/" \
     if [ -d "/opt/apache-tomcat-9.0.34/webapps" ]; then \
         echo "Директория /opt/apache-tomcat-9.0.34/webapps/ существует" \
     else \
         echo "ОШИБКА: директорию /opt/apache-tomcat-9.0.34/webapps/ не существует" \
-    # Создание директории если нужно \
-        #mkdir -p /destination >> $LOG_FILE 2>&1 \
+        # Создание директории если нужно \
+        # mkdir -p /destination >> $LOG_FILE 2>&1 \
     fi
+
 RUN # Копирование файлов \
     echo "Начинаем копирование..." \
     cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/apache-tomcat-9.0.34/webapps/
