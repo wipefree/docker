@@ -42,5 +42,6 @@ EXPOSE 8080
 #**************************
 
 #CMD ["/tmp/copywar.sh"]
-CMD /tmp/copywar.sh
+# CMD /tmp/copywar.sh
+CMD ["sh", "-c", "/tmp/copywar.sh"]
 CMD ["/bin/bash"]
